@@ -10,7 +10,7 @@ I hope to help you!
 
 - clone project
     
-    git@github.com:Kate-liu/Opencv.git
+    git clone https://github.com/Kate-liu/Opencv.git
 
 - Simple picture operation
 

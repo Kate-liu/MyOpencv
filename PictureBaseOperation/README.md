@@ -48,11 +48,18 @@
 
 - Border explode picture
 
+    ps: need to install matplotlib, command: pip install matplotlib
+
     [BorderPicture.py](BorderPicture.py)
 
 
+- Pixel calculate piture
+
+    [PixelCalculate.py](PixelCalculate.py)
 
 
+- Fusion picture
 
+    []()
 
 
