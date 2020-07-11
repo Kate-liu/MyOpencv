@@ -17,6 +17,11 @@ I hope to help you!
     [PictureBaseOperation](PictureBaseOperation/README.md)
     
 
+- Picture processing
+
+    [PictureProcessing](PictureProcessing/README.md)
+
+
 - Other guides
 (wait sometimes......)
 
