@@ -25,3 +25,26 @@ I hope to help you!
 - Other guides
 (wait sometimes......)
 
+
+
+
+## Tools
+- Pycharm：https://www.jetbrains.com/pycharm/
+    
+- Anaconda：https://www.anaconda.com/
+    
+- Git：https://git-scm.com/
+
+
+## Tutorials
+- OpenCV-Python Tutorials：https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html
+
+- opencv-python：https://pypi.org/project/opencv-python/
+
+
+
+
+
+
+
+
