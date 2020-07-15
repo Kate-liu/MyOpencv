@@ -53,7 +53,7 @@
     [BorderPicture.py](BorderPicture.py)
 
 
-- Pixel calculate piture
+- Pixel calculate picture
 
     [PixelCalculate.py](PixelCalculate.py)
 

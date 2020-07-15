@@ -113,9 +113,11 @@ learning: [ImagePyramid.py](ImagePyramid.py)
 Gaussian Pyramid (高斯金字塔)
 
 Down 向下采样方法（缩小）
+
 ![Pyramid](../Data/Pyramid_2.png)
 
 Up 向上采样方法（放大）
+
 ![Pyramid](../Data/Pyramid_3.png)
 
 
@@ -127,12 +129,29 @@ Laplacian Pyramid(拉普拉斯金字塔)
 
 #### Image Contour
 
+learning: [ImageContour.py](ImageContour.py)
+
+![Contour](../Data/chain.png)
+
+![Contour](../Data/contours3.png)
 
 
 
+#### Image template matching
+
+learning: [ImageTemplateMatching.py](ImageTemplateMatching.py)
+
+link: [matchTemplate](https://docs.opencv.org/3.3.1/df/dfb/group__imgproc__object.html#ga3a7850640f1fe1f58fe91a2d7583695d)
 
 
 
+#### Image Histogram
+
+learning: 
 
 
+
+#### Image Fourier transform
+
+learning: 
 
