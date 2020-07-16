@@ -147,11 +147,30 @@ link: [matchTemplate](https://docs.opencv.org/3.3.1/df/dfb/group__imgproc__objec
 
 #### Image Histogram
 
-learning: 
+learning: [ImageHistogram.py](ImageHistogram.py)
+
+![Histogram](../Data/hist_1.png)
+
+
+learning: [ImageHistogramEqualization.py](ImageHistogramEqualization.py)
+
+![Histogram](../Data/hist_2.png)
+
+![Histogram](../Data/hist_3.png)
+
+![Histogram](../Data/hist_4.png)
+
 
 
 
 #### Image Fourier transform
 
-learning: 
+learning: [ImageFourierTransform.py](ImageFourierTransform.py)
+
+link：https://zhuanlan.zhihu.com/p/19763358
+
+
+![Fourier](../Data/Fourier1.jpg)
+
+![Fourier](../Data/Fourier2.jpg)
 
