@@ -50,7 +50,7 @@ I hope to help you!
 
 ## Project
 
-1.[Credit card number identification](CreditCartNumberRecognition/README.md)
+1.[Credit card number identification](CreditCardNumberRecognition/README.md)
 
 2.[Document scanning OCR recognition](DocumentScanningRecognition/README.md)
 
