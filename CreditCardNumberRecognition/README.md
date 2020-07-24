@@ -39,7 +39,7 @@ Data source: [Utils.py](Utils.py)
 
 ### Content tree
 
-windows cmd: tree [path] \f
+windows cmd: tree [path] /f
         
     CreditCartNumberRecognition
         ├─ README.md

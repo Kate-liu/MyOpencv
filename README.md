@@ -74,6 +74,9 @@ I hope to help you!
     
 - Git：https://git-scm.com/
 
+- Tesseract: https://digi.bib.uni-mannheim.de/tesseract/
+
+
 
 ## Tutorials
 - OpenCV-Python Tutorials：https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html
