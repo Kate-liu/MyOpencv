@@ -74,7 +74,7 @@ I hope to help you!
     
 - Git：https://git-scm.com/
 
-- Tesseract: https://digi.bib.uni-mannheim.de/tesseract/
+- Tesseract： https://digi.bib.uni-mannheim.de/tesseract/
 
 
 

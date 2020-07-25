@@ -122,3 +122,29 @@
     ![](../Data/PictureFeature/sift_17.png)
 
 
+#### Feature matching
+
+- learning: [FeatureMatching.py](FeatureMatching.py)
+
+
+#### Random sample consensus (RANSAC)
+
+- Random sample consensus, RANSAC (随机抽样一致性算法)
+
+- 最小二乘法 VS RANSAC
+
+    ![RANSAC](../Data/PictureFeature/ransac_1.png)
+
+- 选择初始样本点进行拟合，给定一个容忍范围，不断进行迭代
+
+    ![RANSAC](../Data/PictureFeature/ransac_2.png)
+
+- 每一次拟合后，容差范围内都有对应的数据点数，找出数据点个数最多的情况，就是最终的拟合结果
+
+    ![RANSAC](../Data/PictureFeature/ransac_3.png)
+
+- 单应性矩阵
+
+    ![RANSAC](../Data/PictureFeature/ransac_4.png)
+
+
