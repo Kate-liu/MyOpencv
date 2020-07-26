@@ -1,40 +1,12 @@
-# Document Scanning Recognition OCR
+# Panoramic image mosaic
 
-
-
-！！！
-This project is not finished.
-
-
-
-
-
-
-
-
-
-
-
-
-This is Document OCR recognition test project.
-
-
-## Install package
-
-- pip install pillow
-
-
-
-## Install OCR Tools
-
-
+This is Panoramic image mosaic test project.
 
 
 ## Project Introduce
 
-We need use Canny, findContours, Perspective Transform to preproccess,
-
-then use tesseract OCR tools, get result text.
+We need use picture feature matching method, 
+get the finally Panoramic picture of left and right picture.
 
 
 
@@ -42,34 +14,29 @@ then use tesseract OCR tools, get result text.
 
 ### Program introduce
 
-Main program: [DocumentOCR.py](DocumentOCR.py)
+Main program: [ImageJoining.py](ImageJoining.py)
 
-Document source: [DocumentData](./DocumentData)
+Tool class: [Joiner.py](Joiner.py)
 
-OCR data source: [OCRData](./OCRData)
-
-OCR result source: [OCRResult](./OCRResult)
+Data source: [Data](./Data)
 
 
 
 ### Content tree
     
     
-        ├─  README.md
-        ├─  DocumentOCR.py
-        │
-        ├─ DocumentData
-        │   ├─  page.jpg
-        │   ├─  receipt.jpg
-        │
-        ├─ OCRData
-        │   ├─  scanDemo.jpg
-        │
-        └─ 
+    PanoramicImageMosaic
+        ├── Data
+        │   ├── left_01.png
+        │   └── right_01.png
+        ├── ImageJoining.py
+        ├── Joiner.py
+        └── README.md
+
 
 
 
 ### Flow chart
 
-![]()
+![PanoramicImageFlowChart](PanoramicImageFlowChart.jpeg)
 
