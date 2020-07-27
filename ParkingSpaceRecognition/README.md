@@ -1,18 +1,19 @@
-# Document Scanning Recognition OCR
+# Parking Space Recognition
 
-This is Document OCR recognition test project.
+This is Parking Space Recognition test project.
 
 
 ## Install package
 
 - pip install keras==2.3.1
 
-- pip install keras==1.15.3
+- pip install tensorflow==1.15.3
 
+- pip install opencv-python==3.4.10.35
+    
+- pip install opencv-contrib-python==3.4.10.35
 
-
-## Install OCR Tools
-
+- ps：install version need equality.
 
 
 
