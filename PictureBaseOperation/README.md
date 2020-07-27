@@ -14,9 +14,9 @@
 
 - Install openCV:
     
-    pip install opencv-python
+    pip install opencv-python==4.3.0.36
     
-    pip install opencv-contrib-python
+    pip install opencv-contrib-python==4.3.0.36
 
     ps：install version need equality.
 

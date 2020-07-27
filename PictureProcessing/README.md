@@ -2,6 +2,15 @@
 - This is include some picture processing.
 
 
+## Install package
+
+- pip install opencv-python==4.3.0.36
+    
+- pip install opencv-contrib-python==4.3.0.36
+
+- ps：install version need equality.
+
+
 ## Picture Processing
 
 #### review BGR format, gray picture and HSV format 

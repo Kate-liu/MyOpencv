@@ -5,7 +5,14 @@ This is a project to Credit card number identification.
 
 ## Install package
 
-pip install imutils
+- pip install imutils
+
+- pip install opencv-python==4.3.0.36
+    
+- pip install opencv-contrib-python==4.3.0.36
+
+- ps：install version need equality.
+
 
 
 ## Project Introduce

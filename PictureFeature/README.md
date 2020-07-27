@@ -2,6 +2,16 @@
 
 - This is include some picture feature algorithm.
 
+
+## Install package
+
+- pip install opencv-python==4.3.0.36
+    
+- pip install opencv-contrib-python==4.3.0.36
+
+- ps：install version need equality.
+
+
 ## Picture feature
 
 #### Harris algorithm

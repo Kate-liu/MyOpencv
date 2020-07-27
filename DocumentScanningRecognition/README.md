@@ -5,9 +5,9 @@ This is Document OCR recognition test project.
 
 ## Install package
 
-- pip install pillow
+- pip install pillow==7.2.0
 
-- pip install pytesseract
+- pip install pytesseract==0.3.4
 
 - pip uninstall opencv-python, pip install opencv-python==3.4.10.35
 

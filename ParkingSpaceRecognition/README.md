@@ -5,7 +5,9 @@ This is Document OCR recognition test project.
 
 ## Install package
 
-- pip install pillow
+- pip install keras==2.3.1
+
+- pip install keras==1.15.3
 
 
 

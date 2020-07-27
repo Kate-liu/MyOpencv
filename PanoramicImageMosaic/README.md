@@ -3,6 +3,15 @@
 This is Panoramic image mosaic test project.
 
 
+## Install package
+
+- pip install opencv-python==4.3.0.36
+    
+- pip install opencv-contrib-python==4.3.0.36
+
+- ps：install version need equality.
+
+
 ## Project Introduce
 
 We need use picture feature matching method, 
