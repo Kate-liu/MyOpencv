@@ -35,9 +35,9 @@ I hope to help you!
 
     [OpticalFlowEstimation](OpticalFlowEstimation/README.md)
 
-- Opencv DDN Module
+- Opencv DNN Module
     
-    [OpencvDDNModule](OpencvDDNModule/README.md)
+    [OpencvDNNModule](OpencvDNNModule/README.md)
 
 - Convolution principle
 
