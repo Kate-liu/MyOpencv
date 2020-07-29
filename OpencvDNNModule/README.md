@@ -2,7 +2,7 @@
 
 This is Opencv DNN Module demo code.
 
-ps：DNN is Deep Neural Networks (深度神经网络
+ps：DNN is Deep Neural Networks (深度神经网络)
 
 
 ## Install package
