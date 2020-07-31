@@ -37,9 +37,9 @@ Credit card：
 
 Main program: [CreditCardOCR.py](CreditCardOCR.py)
 
-Tools program: [CreditCardData](CreditCardData/)
+Tools program: [Utils.py](Utils.py)
 
-Data source: [Utils.py](Utils.py)
+Data source: [CreditCardData](CreditCardData/)
 
 
 
