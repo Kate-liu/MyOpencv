@@ -169,6 +169,7 @@ def pytesseract_image(preprocess_image, gray_image):
 
 
 if __name__ == '__main__':
+    # --image ./DocumentData/page.jpg
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--image", required=True, help="The document OCR image path")
     args = vars(parser.parse_args())
