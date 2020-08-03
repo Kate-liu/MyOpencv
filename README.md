@@ -57,7 +57,7 @@ I hope to help you!
 
 3.[Panoramic image Mosaic](PanoramicImageMosaic/README.md)
 
-4.[Parking space identification](ParkingSpaceRecognition/README.md)
+4.[Parking space recognition](ParkingSpaceRecognition/README.md)
 
 5.[The answer sheet identifies the verdict](AnswerSheetRecognition/README.md)
 

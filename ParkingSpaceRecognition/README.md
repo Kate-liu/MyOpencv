@@ -19,23 +19,24 @@ This is Parking Space Recognition test project.
 
 ## Project Introduce
 
-We need use Canny, findContours, Perspective Transform to preproccess,
+We need use tensorflow to training the empty and occupied parking picture.
 
-then use tesseract OCR tools, get result text.
-
+Then, use the training result  car1.h5 solve the test parking images and the video of parking space. 
 
 
 ## Implementation approach
 
 ### Program introduce
 
-Main program: [DocumentOCR.py](DocumentOCR.py)
+Training Data: [TrainData](./TrainData)
 
-Document source: [DocumentData](./DocumentData)
+Video Data: [VideoData](./VideoData)
 
-OCR data source: [OCRData](./OCRData)
+Test Data: [TestData](./TestData)
 
-OCR result source: [OCRResult](./OCRResult)
+Training program: [TrainingParking.py](./TrainingParking.py)
+
+
 
 
 
