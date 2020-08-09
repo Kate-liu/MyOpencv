@@ -1,27 +1,22 @@
-# Document Scanning Recognition OCR
+# Answer Sheet Recognition OCR
 
-This is Document OCR recognition test project.
+This is Answer sheet recognition test project.
 
 
 ## Install package
 
-- pip install opencv-python==4.3.0.36
+- pip install opencv-python==3.4.10.35
     
-- pip install opencv-contrib-python==4.3.0.36
+- pip install opencv-contrib-python==3.4.10.35
 
 - ps：install version need equality.
-
-
-## Install OCR Tools
-
 
 
 
 ## Project Introduce
 
-We need use Canny, findContours, Perspective Transform to preproccess,
-
-then use tesseract OCR tools, get result text.
+We need use findContours, four point transform, countNonZero... methods
+get the score.
 
 
 
@@ -29,34 +24,23 @@ then use tesseract OCR tools, get result text.
 
 ### Program introduce
 
-Main program: [DocumentOCR.py](DocumentOCR.py)
+Main program: [AnswerSheetOCR.py](AnswerSheetOCR.py)
 
-Document source: [DocumentData](./DocumentData)
+Data source: [Data](Data)
 
-OCR data source: [OCRData](./OCRData)
-
-OCR result source: [OCRResult](./OCRResult)
 
 
 
 ### Content tree
     
     
-        ├─  README.md
-        ├─  DocumentOCR.py
-        │
-        ├─ DocumentData
-        │   ├─  page.jpg
-        │   ├─  receipt.jpg
-        │
-        ├─ OCRData
-        │   ├─  scanDemo.jpg
-        │
-        └─ 
-
-
-
-### Flow chart
-
-![]()
-
+    .
+    ├── AnswerSheetOCR.py
+    ├── Data
+    │   ├── test_00.png
+    │   ├── test_01.png
+    │   ├── test_02.png
+    │   ├── test_03.png
+    │   ├── test_04.png
+    │   └── test_05.png
+    └── README.md
