@@ -1,5 +1,7 @@
 # -*- coding:utf-8 -*-
 # This is a Training parking code
+# Warning: This code running can cover origin car-default.h5
+# origin `TrainResult/car-default.h5` file is a empty file.
 
 import os
 from keras import applications
@@ -12,7 +14,6 @@ from keras.callbacks import ModelCheckpoint
 from keras.callbacks import EarlyStopping
 
 from keras.preprocessing.image import ImageDataGenerator
-
 
 # get all train or test files
 files_train = 0
@@ -30,7 +31,6 @@ for sub_folder in os.listdir(training_test_folder):
     path, dirs, files = next(os.walk(os.path.join(training_test_folder, sub_folder)))
     files_test += len(files)
 
-
 # Some parameters
 img_width, img_height = 48, 48
 training_data_train_dir = "TrainData/train"
@@ -39,7 +39,7 @@ number_train = files_train
 number_test = files_test
 number_classes = 2
 batch_size = 32
-epochs = 15
+epochs = 1
 
 # use VGG16 architecture.
 model = applications.VGG16(include_top=False, weights='imagenet', input_shape=(img_width, img_height, 3))
@@ -53,11 +53,10 @@ x = Flatten()(x)
 predictions = Dense(number_classes, activation="softmax")(x)
 
 # create model
-model_final = Model(input=Model.input, output=predictions)
+model_final = Model(input=model.input, output=predictions)
 
 model_final.compile(loss="categorical_crossentropy", optimizer=optimizers.SGD(lr=0.0001, momentum=0.9),
                     metrics=["accuracy"])
-
 
 # create train or test generator
 train_datagen = ImageDataGenerator(
@@ -86,9 +85,9 @@ test_generator = test_datagen.flow_from_directory(
     target_size=(img_height, img_width),
     class_mode="categorical")
 
-
-# start trains the model, rewrite to the car.h5 file.
-checkpoint = ModelCheckpoint("TrainResult/car.h5",
+# start trains the model, rewrite to the car-default.h5 file.
+# But this checkpoint save method is not available
+checkpoint = ModelCheckpoint(filepath="TrainResult/car.h5",
                              monitor="val_acc",
                              verbose=1,
                              save_best_only=True,
@@ -107,3 +106,6 @@ history_object = model_final.fit_generator(
     nb_val_samples=number_test,
     callbacks=[checkpoint, early]
 )
+
+# save model
+model_final.save("TrainResult/car-default.h5")
