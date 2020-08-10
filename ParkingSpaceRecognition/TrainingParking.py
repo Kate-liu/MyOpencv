@@ -31,7 +31,7 @@ for sub_folder in os.listdir(training_test_folder):
     path, dirs, files = next(os.walk(os.path.join(training_test_folder, sub_folder)))
     files_test += len(files)
 
-# Some parameters
+# key point: Some parameters
 img_width, img_height = 48, 48
 training_data_train_dir = "TrainData/train"
 training_data_test_dir = "TrainData/test"
@@ -41,7 +41,7 @@ number_classes = 2
 batch_size = 32
 epochs = 1
 
-# use VGG16 architecture.
+# use VGG16 architecture. can use others.
 model = applications.VGG16(include_top=False, weights='imagenet', input_shape=(img_width, img_height, 3))
 
 for layer in model.layers[:10]:

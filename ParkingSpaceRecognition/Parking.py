@@ -1,11 +1,10 @@
 import matplotlib.pyplot as plt
 import cv2
-import os, glob
+import os
 import numpy as np
 
 
 class Parking:
-
     def show_images(self, images, cmap=None):
         cols = 2
         rows = (len(images) + 1) // cols
@@ -29,7 +28,8 @@ class Parking:
         # 过滤掉背景
         lower = np.uint8([120, 120, 120])
         upper = np.uint8([255, 255, 255])
-        # lower_red和高于upper_red的部分分别变成0，lower_red～upper_red之间的值变成255,相当于过滤背景
+        # lower_red 和高于 upper_red的部分分别变成0
+        # lower_red～upper_red之间的值变成255,相当于过滤背景
         white_mask = cv2.inRange(image, lower, upper)
         self.cv_show('white_mask', white_mask)
 
@@ -45,7 +45,7 @@ class Parking:
 
     def filter_region(self, image, vertices):
         """
-                剔除掉不需要的地方
+        剔除掉不需要的地方
         """
         mask = np.zeros_like(image)
         if len(mask.shape) == 2:
@@ -55,14 +55,14 @@ class Parking:
 
     def select_region(self, image):
         """
-                手动选择区域
+        手动选择区域
         """
         # first, define the polygon by vertices
         rows, cols = image.shape[:2]
         pt_1 = [cols * 0.05, rows * 0.90]
         pt_2 = [cols * 0.05, rows * 0.70]
         pt_3 = [cols * 0.30, rows * 0.55]
-        pt_4 = [cols * 0.6, rows * 0.15]
+        pt_4 = [cols * 0.60, rows * 0.15]
         pt_5 = [cols * 0.90, rows * 0.15]
         pt_6 = [cols * 0.90, rows * 0.90]
 
@@ -78,7 +78,10 @@ class Parking:
     def hough_lines(self, image):
         # 输入的图像需要是边缘检测后的结果
         # minLineLengh(线的最短长度，比这个短的都被忽略)和MaxLineCap（两条直线之间的最大间隔，小于此值，认为是一条直线）
-        # rho距离精度,theta角度精度,threshod超过设定阈值才被检测出线段
+        # rho距离精度,
+        # theta角度精度,
+        # threshod超过设定阈值才被检测出线段
+        # Finds line segments in a binary image using the probabilistic Hough transform.
         return cv2.HoughLinesP(image, rho=0.1, theta=np.pi / 10, threshold=15, minLineLength=9, maxLineGap=4)
 
     def draw_lines(self, image, lines, color=[255, 0, 0], thickness=2, make_copy=True):
@@ -103,26 +106,22 @@ class Parking:
             for x1, y1, x2, y2 in line:
                 if abs(y2 - y1) <= 1 and abs(x2 - x1) >= 25 and abs(x2 - x1) <= 55:
                     cleaned.append((x1, y1, x2, y2))
-
         # Step 2: 对直线按照x1进行排序
         import operator
         list1 = sorted(cleaned, key=operator.itemgetter(0, 1))
-
         # Step 3: 找到多个列，相当于每列是一排车
         clusters = {}
         dIndex = 0
         clus_dist = 10
-
         for i in range(len(list1) - 1):
             distance = abs(list1[i + 1][0] - list1[i][0])
             if distance <= clus_dist:
-                if not dIndex in clusters.keys(): clusters[dIndex] = []
+                if not dIndex in clusters.keys():
+                    clusters[dIndex] = []
                 clusters[dIndex].append(list1[i])
                 clusters[dIndex].append(list1[i + 1])
-
             else:
                 dIndex += 1
-
         # Step 4: 得到坐标
         rects = {}
         i = 0
@@ -142,7 +141,6 @@ class Parking:
                 avg_x2 = avg_x2 / len(cleaned)
                 rects[i] = (avg_x1, avg_y1, avg_x2, avg_y2)
                 i += 1
-
         print("Num Parking Lanes: ", len(rects))
         # Step 5: 把列矩形画出来
         buff = 7
@@ -171,6 +169,7 @@ class Parking:
             y1 = int(tup[1] + adj_y1[key])
             y2 = int(tup[3] + adj_y2[key])
             cv2.rectangle(new_image, (x1, y1), (x2, y2), (0, 255, 0), 2)
+
             num_splits = int(abs(y2 - y1) // gap)
             for i in range(0, num_splits + 1):
                 y = int(y1 + i * gap)
@@ -198,22 +197,13 @@ class Parking:
                     x = int((x1 + x2) / 2)
                     spot_dict[(x1, y, x, y + gap)] = cur_len + 1
                     spot_dict[(x, y, x2, y + gap)] = cur_len + 2
-
         print("total parking spaces: ", tot_spots, cur_len)
         if save:
-            filename = 'with_parking.jpg'
+            filename = 'TestResult/with_parking.jpg'
             cv2.imwrite(filename, new_image)
         return new_image, spot_dict
 
-    def assign_spots_map(self, image, spot_dict, make_copy=True, color=[255, 0, 0], thickness=2):
-        if make_copy:
-            new_image = np.copy(image)
-        for spot in spot_dict.keys():
-            (x1, y1, x2, y2) = spot
-            cv2.rectangle(new_image, (int(x1), int(y1)), (int(x2), int(y2)), color, thickness)
-        return new_image
-
-    def save_images_for_cnn(self, image, spot_dict, folder_name='cnn_data'):
+    def save_images_for_cnn(self, image, spot_dict, folder_name='CNNData'):
         for spot in spot_dict.keys():
             (x1, y1, x2, y2) = spot
             (x1, y1, x2, y2) = (int(x1), int(y1), int(x2), int(y2))
@@ -224,16 +214,13 @@ class Parking:
 
             filename = 'spot' + str(spot_id) + '.jpg'
             print(spot_img.shape, filename, (x1, x2, y1, y2))
-
             cv2.imwrite(os.path.join(folder_name, filename), spot_img)
 
     def make_prediction(self, image, model, class_dictionary):
         # 预处理
         img = image / 255.
-
         # 转换成4D tensor
         image = np.expand_dims(img, axis=0)
-
         # 用训练好的模型进行训练
         class_predicted = model.predict(image)
         inID = np.argmax(class_predicted[0])
@@ -245,6 +232,7 @@ class Parking:
             new_image = np.copy(image)
             overlay = np.copy(image)
         self.cv_show('new_image', new_image)
+
         cnt_empty = 0
         all_spots = 0
         for spot in spot_dict.keys():
@@ -264,14 +252,13 @@ class Parking:
         cv2.putText(new_image, "Available: %d spots" % cnt_empty, (30, 95),
                     cv2.FONT_HERSHEY_SIMPLEX,
                     0.7, (255, 255, 255), 2)
-
         cv2.putText(new_image, "Total: %d spots" % all_spots, (30, 125),
                     cv2.FONT_HERSHEY_SIMPLEX,
                     0.7, (255, 255, 255), 2)
-        save = False
 
+        save = False
         if save:
-            filename = 'with_marking.jpg'
+            filename = 'TestResult/with_marking.jpg'
             cv2.imwrite(filename, new_image)
         self.cv_show('new_image', new_image)
 
@@ -283,15 +270,17 @@ class Parking:
         while ret:
             ret, image = cap.read()
             count += 1
+
             if count == 5:
                 count = 0
-
                 new_image = np.copy(image)
                 overlay = np.copy(image)
+
                 cnt_empty = 0
                 all_spots = 0
                 color = [0, 255, 0]
                 alpha = 0.5
+
                 for spot in final_spot_dict.keys():
                     all_spots += 1
                     (x1, y1, x2, y2) = spot
@@ -309,13 +298,11 @@ class Parking:
                 cv2.putText(new_image, "Available: %d spots" % cnt_empty, (30, 95),
                             cv2.FONT_HERSHEY_SIMPLEX,
                             0.7, (255, 255, 255), 2)
-
                 cv2.putText(new_image, "Total: %d spots" % all_spots, (30, 125),
                             cv2.FONT_HERSHEY_SIMPLEX,
                             0.7, (255, 255, 255), 2)
                 cv2.imshow('frame', new_image)
                 if cv2.waitKey(10) & 0xFF == ord('q'):
                     break
-
         cv2.destroyAllWindows()
         cap.release()

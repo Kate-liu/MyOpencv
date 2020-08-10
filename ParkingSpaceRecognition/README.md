@@ -28,18 +28,24 @@ Then, use the training result  car1.h5 solve the test parking images and the vid
 
 ### Program introduce
 
-Training Data: [TrainData](../../../CodeStudy/Opencv/ParkingSpaceRecognition/TrainData)
+Training Data: [TrainData](./TrainData)
 
-Video Data: [VideoData](../../../CodeStudy/Opencv/ParkingSpaceRecognition/VideoData)
+Training Result: [TrainResult](./TrainResult)
 
-Test Data: [TestData](../../../CodeStudy/Opencv/ParkingSpaceRecognition/TestData)
+Test Data: [TestData](./TestData)
 
-Training program: [TrainingParking.py](../../../CodeStudy/Opencv/ParkingSpaceRecognition/TrainingParking.py)
+Test Result: [TestResult](./TestResult)
+
+CNN Data: [CNNData](./CNNData)
+
+Video Data: [VideoData](./VideoData)
+
+Training program: [TrainingParking.py](./TrainingParking.py)
 (Warning: This code running can cover origin car-default.h5)
 
-Parking Recognition Test program: [ParkingRecognitionTestData.py](../../../CodeStudy/Opencv/ParkingSpaceRecognition/ParkingRecognitionTestData.py)
+Parking Recognition Test program: [ParkingRecognitionTestData.py](./ParkingRecognitionTestData.py)
 
-Parking Recognition Video program: [ParkingRecognitionVideoData.py](../../../CodeStudy/Opencv/ParkingSpaceRecognition/ParkingRecognitionVideoData.py)
+Parking Recognition Video program: [ParkingRecognitionVideoData.py](./ParkingRecognitionVideoData.py)
 
 
 
@@ -72,22 +78,47 @@ Code: rdp7
 
 ### Content tree
     
+    .
+    │  
+    ├── Parking.py
+    ├── ParkingRecognitionTestData.py
+    ├── ParkingRecognitionVideoData.py
+    ├── TrainingParking.py
+    ├── README.md
+    │ 
+    ├── CNNData
+    │   └── CNNData-default.txt
+    ├── TestData
+    │   ├── scene1380.jpg
+    │   ├── scene1410.jpg
+    │   └── spot_dict.pickle
+    ├── TestResult
+    │   └── with_parking.jpg
+    ├── TrainData
+    │   ├── test
+    │   │   ├── empty
+    │   │   │   ├── spot1.jpg
+    │   │   │   ├── ...
+    │   │   │   └── spot89.jpg
+    │   │   └── occupied
+    │   │       ├── spot100.jpg
+    │   │       ├── ...
+    │   │       └── spot98.jpg
+    │   └── train
+    │       ├── empty
+    │       │   ├── spot84.jpg
+    │       │   ├── ...
+    │       │   └── spot87.jpg
+    │       └── occupied
+    │           ├── spot10.jpg
+    │           ├── ...
+    │           └── spot99.jpg
+    ├── TrainResult
+    │   └── car-default.h5
+    └── VideoData
+        └── parking_video.mp4
     
-        ├─  README.md
-        ├─  DocumentOCR.py
-        │
-        ├─ DocumentData
-        │   ├─  page.jpg
-        │   ├─  receipt.jpg
-        │
-        ├─ OCRData
-        │   ├─  scanDemo.jpg
-        │
-        └─ 
 
 
 
-### Flow chart
-
-![]()
 
