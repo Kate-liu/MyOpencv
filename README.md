@@ -40,9 +40,9 @@ I hope to help you!
     
     [OpencvDNNModule](OpencvDNNModule/README.md)
 
-- Convolution principle
+- Convolutional Neural Network (CNN)
 
-    [ConvolutionPrinciple](ConvolutionPrinciple/README.md)
+    [ConvolutionNeuralNetwork](ConvolutionNeuralNetwork/README.md)
     
 - Other guides
 (wait sometimes......)
