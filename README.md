@@ -5,7 +5,7 @@ This is a Opencv guide.
 I hope to help you! 
 
 
-![Outline](Outline.PNG)
+![Outline](OpencvOutline.PNG)
 
 
 ## Start
