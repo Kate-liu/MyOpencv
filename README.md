@@ -4,6 +4,7 @@ This is a Opencv guide.
 
 I hope to help you! 
 
+- [OpencvOutline](Data/OpencvOutline/OpencvOutline.xmind)
 
 ![Outline](OpencvOutline.PNG)
 
